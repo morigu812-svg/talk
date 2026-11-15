@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="招待リンクでつながる、ブラウザの1対1音声通話">
+  <title>Talk — ブラウザで音声通話</title>
+  <link rel="stylesheet" href="talk.css">
+  <script defer src="peerjs.min.js"></script>
+  <script defer src="talk.js"></script>
+</head>
+<body>
+  <header class="top"><a href="./"><span class="brand-mark" aria-hidden="true">◖◗</span> Talk<span class="period">.</span></a></header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow"><span></span> ブラウザ音声通話</p>
+      <h1>声で、<br>つながろう<span class="period">。</span></h1>
+      <p class="lead">リンクを送って、すぐにふたりで通話。<br>アカウントの登録は不要です。</p>
+    </section>
+    <section class="console" aria-labelledby="room-title">
+      <div class="console-top"><span class="console-label">通話ルーム</span><span id="state" class="pill">待機中</span></div>
+      <div class="visual" aria-hidden="true"><div class="orb"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <h2 id="room-title">新しい通話をはじめる</h2>
+      <p id="status" role="status">部屋を作って、相手に招待リンクを送れます。</p>
+      <div id="invite" hidden>
+        <label for="link">招待リンク</label>
+        <div class="link-row"><input id="link" readonly><button id="copy" type="button">コピー</button></div>
+        <p id="copy-status" role="status"></p>
+      </div>
+      <button id="start" class="primary" type="button">部屋を作る <span aria-hidden="true">↗</span></button>
+      <div id="controls" hidden>
+        <button id="mute" type="button" aria-pressed="false">マイクをミュート</button>
+        <button id="leave" type="button">退出</button>
+      </div>
+      <audio id="remote" autoplay playsinline></audio>
+      <button id="play" hidden type="button">相手の音声を再生</button>
+    </section>
+  </main>
+  <footer><span>Talk.</span><span>1対1 · マイクの許可が必要です</span></footer>
+</body>
+</html>
